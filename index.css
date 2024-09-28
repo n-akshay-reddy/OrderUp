@@ -1,0 +1,604 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Body HTML Element - Online State */
+body {
+    background-color: #f0f8ff; /* Light blue background color for a clean, fresh look */
+    
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav items */
+    align-items: center; /* Center items vertically */
+    padding: 20px 40px; /* Padding around the header */
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+}
+
+.logo-container {
+    flex: 1; /* Take up space on the left */
+}
+
+.logo {
+    max-width: 150px; /* Adjust logo size */
+    height: auto;
+    display: block;
+    border-radius: 50%; /* Makes the image oval */
+    object-fit: cover; /* Ensures the image covers the oval shape nicely */
+}
+
+.nav-items ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal list */
+    gap: 20px; /* Space between items */
+}
+
+.nav-items li {
+    font-size: 18px; /* Larger font size */
+    font-weight: 500; /* Medium font weight */
+}
+
+.nav-items a {
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* White text color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-items a:hover {
+    color: #ffeb3b; /* Bright yellow on hover */
+}
+
+.nav-items li:last-child {
+    font-weight: 700; /* Make "Cart" bold */
+    color: #ffeb3b; /* Highlight cart item in yellow */
+}
+
+.nav-items li:last-child a:hover {
+    color: #ffc107; /* Slightly darker yellow on hover */
+}
+
+
+/* ------------------- Body component ------------------------------ */
+
+.res-card {
+    margin: 10px;
+    width: 220px;
+    height: 380px;
+    padding: 15px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Subtle gradient background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.res-logo {
+    width: 100%;
+    height: 60%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.res-card h3, .res-card h4 {
+    color: #333;
+    text-align: center;
+    margin: 5px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Evenly space out the restaurant cards */
+    gap: 20px; /* Space between the restaurant cards */
+    padding: 20px;
+    background: radial-gradient(circle, #f0f0f0, #d9d9d9); /* Radial gradient background */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.res-container a {
+    text-decoration: none; /* Remove the underline from links */
+    flex-grow: 1;
+}
+
+.res-container a:hover .res-card {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Reverse gradient on hover */
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+/* Filter Container */
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 20px; /* Padding from the top */
+}
+
+/* Search Box */
+.search-box {
+    padding: 10px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #f9f9f9; /* Matching background color */
+    color: #333; /* Text color to match other components */
+}
+
+.search-box:focus {
+    border-color: #674636; /* Border color on focus */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on focus */
+}
+
+/* Search Button */
+.search button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F05A7E; /* Button background */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-right: 10px; /* Added space between buttons */
+}
+
+.search button:hover {
+    background-color: #4f352b; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Filter Button */
+.filter-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F05A7E; /* Button background */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.filter-btn:hover {
+    background-color: #4f352b; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* ---------- offline ------------------- */
+.offline-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    background-color: #ffcccc; /* Soft red background for offline status */
+    color: #cc0000; /* Dark red text color */
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    margin: 0 auto; /* Center horizontally */
+    max-width: 600px; /* Limit the width of the message box */
+}
+
+.offline-message h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Rating-label ----------------------- */
+.res-card-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.rating-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: black; /* Matches your preferred button color */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ----------------- Shimmer UI ------------------- */
+/* Shimmer Container */
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between shimmer cards */
+    padding: 10px; /* Padding around the container */
+}
+
+/* Shimmer Card */
+.shimmer-card {
+    width: 200px;
+    height: 300px;
+    margin: 5px;
+    padding: 5px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    animation: shimmer 1.5s infinite; /* Shimmer animation */
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+
+
+
+/* -----------------------------About Us-------------------------------------- */
+
+.user-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 350px;
+    margin: 20px auto;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+    animation: rotate 6s infinite linear;
+    z-index: 0;
+}
+
+.user-card h2,
+.user-card h3,
+.user-card h4 {
+    position: relative;
+    z-index: 1;
+}
+
+.user-card h2 {
+    color: #ff6f61;
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.user-card h3 {
+    color: #00aaff;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.user-card h4 {
+    color: #4caf50;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ----------- loader --------------- */
+
+.loader-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .loader {
+    border: 8px solid #f3f3f3; /* Light grey background */
+    border-top: 8px solid #3498db; /* Blue color */
+    border-right: 8px solid #e74c3c; /* Red color */
+    border-bottom: 8px solid #f1c40f; /* Yellow color */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+/* --------------- Restaurant Menu ---------------------- */
+/* Main Menu Container */
+.menu {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Restaurant Name */
+.menu h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #674636;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Cuisines and Cost Information */
+.menu p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Menu Heading */
+.menu h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #674636;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid #674636;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Accordion Card */
+.accordion-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px; /* Gap between accordion cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Lightish background color for highlight */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+/* Accordion Header */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 16px;
+    font-weight: 600;
+    color: #333;
+    background-color: #e6e6e6; /* Lightish background for header */
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #d4d4d4; /* Slightly darker on hover */
+}
+
+/* Accordion Body */
+.accordion-body {
+    padding: 16px;
+    border-top: 1px solid #ddd;
+}
+
+/* Expanded Accordion Body */
+.accordion-card.expanded .accordion-body {
+    padding: 16px;
+    max-height: 500px; /* Adjust this value based on content */
+}
+
+/* Menu List */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Menu Item */
+.menu ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Menu Item Hover Effect */
+.menu ul li:hover {
+    background-color: #e6d4cb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu Item Image */
+.item-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.item-photo:hover {
+    transform: scale(1.8); /* Adjusted scale to 1.2 */
+}
+
+/* Button Styling */
+.add-button {
+    background-color: #674636; /* Matching color for the button */
+    color: #fff; /* Text color for the button */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 8px 12px; /* Padding around the text */
+    font-size: 16px; /* Font size of the button text */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+    display: inline-block; /* Ensure button size adjusts to text */
+    text-align: center; /* Center text within the button */
+}
+
+/* Button Hover Effect */
+.add-button:hover {
+    background-color: #8a5a4a; /* Lighter shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Button Focus Effect */
+.add-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Add custom focus outline */
+}
+
+/* ------------ Cart----------------- */
+/* Cart Container */
+.cart-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Summary Section */
+.cart-summary {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cart-summary h2 {
+    font-size: 28px;
+    color: #674636;
+    margin-bottom: 10px;
+}
+
+.cart-summary p {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.clear-cart-button {
+    background-color: #674636;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.clear-cart-button:hover {
+    background-color: #8a5a4a;
+}
+
+/* Cart Items List */
+.cart-items-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Cart Item */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #777;
+}
+
+/* Empty Cart Message */
+.empty-cart-message {
+    text-align: center;
+    color: #777;
+    font-size: 20px;
+    margin-top: 30px;
+}
