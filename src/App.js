@@ -9,7 +9,6 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import appStore from "./utils/appStore";
 import { Provider } from  "react-redux"
 import Cart from "./components/Cart";
-import About from "./components/About/About";
 import Search from "./components/Search";
 
 // import About from "./components/About/About";
