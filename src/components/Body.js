@@ -15,9 +15,9 @@ import useOnlineStatus from "../utils/useOnlineStatus";
         const [listOfRestaurants, setListOfRestaurants] = useState([]);
         const [filteredRestaurants, setFiltredRestaurants] = useState([]);
 
-        const [location, setLocation] = useState({ lat: 12.9352403, lng: 77.624532 }); // Default location
+        const [location, setLocation] = useState({ lat: 17.406498, lng: 78.47724389999999 }); // Default location
 
-        const [searchText, setSearchText] = useState("");
+        // const [searchText, setSearchText] = useState("");
 
         const RestaurantCardHighRating = withRatingLabel(RestaurantCard);
 
@@ -86,17 +86,22 @@ import useOnlineStatus from "../utils/useOnlineStatus";
         <div className="body">
             <div className="filter">
             <div className="search">
-                <input type="text" className="seacrh-box"  onChange={(e)=>{
+                {/* <input type="text" className="seacrh-box"  onChange={(e)=>{
                     setSearchText(e.target.value);
                     
-                }}/>
-                <button onClick={()=> {
+                }}/> */}
+                {/* <button onClick={()=> {
                     const filteredRestaurantList = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                     setFiltredRestaurants(filteredRestaurantList)
-                }}>Search</button>
-                <button onClick={()=> {
+                }}>Search</button> */}
+
+                <Link to="/search">
+                    <button className="search-nav-btn">Search</button>
+                </Link>
+
+                {/* <button onClick={()=> {
                     setFiltredRestaurants(listOfRestaurants)
-                }}>Reset</button>
+                }}>Reset</button> */}
 
                 {/* Button to get location and fetch restaurants */}
                 <button className="filter-btn" onClick={accessLocation}>
